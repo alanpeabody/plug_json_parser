@@ -4,7 +4,7 @@ JsonParser
 Nothing more than this.
 
 ```elixir
-Plug.Parsers, parsers: [JsonParser]
+Plug.Parsers, parsers: [PlugJsonParser]
 ```
 
 * uses Jazz json parser

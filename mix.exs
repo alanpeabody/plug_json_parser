@@ -12,6 +12,12 @@ defmodule JsonParser.Mixfile do
     [applications: []]
   end
 
+  defp package do
+    [contributors: ["Kurt Williams"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/onkel-dirtus/plug_json_parser"}]
+  end
+
   defp deps() do
     [{:cowboy, github: "extend/cowboy"},
      {:plug, "~> 0.5.1"},
