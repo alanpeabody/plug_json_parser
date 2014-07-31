@@ -5,11 +5,19 @@ defmodule JsonParser.Mixfile do
     [app: :plug_json_parser,
      version: "0.0.1",
      elixir: "~> 0.14.3",
+     description: description,
+     package: package,
      deps: deps]
   end
 
   def application do
     [applications: []]
+  end
+
+  defp description do
+    """
+    JSON parse for Plug.Parsers
+    """
   end
 
   defp package do
