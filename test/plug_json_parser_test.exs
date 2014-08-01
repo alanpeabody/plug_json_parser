@@ -10,7 +10,21 @@ defmodule PlugJsonParserTest do
     assert @data == Plug.Parsers.call(conn, @opts).params
   end
 
-  test "unprocessable entity" do
+  test "parsing with opts" do
+    data = %{arg1: "arg1", arg2: %{arg3: "arg3"}}
+    conn = data |> Jazz.encode! |> req
+    ^data = Plug.Parsers.call(conn, Keyword.put(@opts, :jazz, [keys: :atoms])).params
+  end
+
+  test "parse atoms to exsiting" do
+    data = %{arg1: "arg1", arg2: %{:arg3 => "arg3", "arg4" => "arg4"}}
+    conn = data |> Jazz.encode! |> req
+    assert_raise ArgumentError, fn ->
+      Plug.Parsers.call(conn, Keyword.put(@opts, :jazz, [keys: :atoms!]))
+    end
+  end
+
+  test "bad request" do
     assert_raise PlugJsonParser.BadRequestError, fn ->
       Plug.Parsers.call(req("data"), @opts)
     end

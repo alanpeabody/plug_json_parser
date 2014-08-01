@@ -16,7 +16,8 @@ defmodule PlugJsonParser do
   def parse(%Conn{} = conn, "application", "json", _headers, opts) do
     case Conn.read_body(conn, opts) do
       {:ok, body, conn} ->
-        case Jazz.decode(body) do
+        jazz_opts = opts[:jazz] || []
+        case Jazz.decode(body, jazz_opts) do
           {:ok, decoded} ->
             {:ok, decoded, conn}
           {:error, :invalid} ->
