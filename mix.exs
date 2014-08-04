@@ -3,8 +3,8 @@ defmodule PlugJsonParser.Mixfile do
 
   def project do
     [app: :plug_json_parser,
-     version: "0.0.3",
-     elixir: "~> 0.14.3",
+     version: "0.0.4",
+     elixir: "~> 0.15.0",
      description: description,
      package: package,
      deps: deps]
@@ -27,8 +27,8 @@ defmodule PlugJsonParser.Mixfile do
   end
 
   defp deps() do
-    [{:cowboy, github: "extend/cowboy"},
-     {:plug, "~> 0.5.1"},
-     {:jazz, "~> 0.1.2"}]
+    [{:cowboy, hex_app: :cowboy},
+     {:plug, "~> 0.5.3"},
+     {:jazz, "~> 0.2.0"}]
   end
 end
