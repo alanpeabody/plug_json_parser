@@ -11,7 +11,7 @@ defmodule PlugJsonParser.Mixfile do
   end
 
   def application do
-    [applications: []]
+    [applications: [:cowboy, :plug, :jazz]]
   end
 
   defp description do
