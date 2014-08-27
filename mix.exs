@@ -3,7 +3,7 @@ defmodule PlugJsonParser.Mixfile do
 
   def project do
     [app: :plug_json_parser,
-     version: "0.0.5",
+     version: "0.0.6-dev",
      elixir: "~> 0.15.1",
      description: description,
      package: package,
