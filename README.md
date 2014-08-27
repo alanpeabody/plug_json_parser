@@ -7,5 +7,5 @@ Nothing more than this.
 Plug.Parsers, parsers: [PlugJsonParser]
 ```
 
-* uses Jazz json parser
+* uses Poison json parser
 * raises `BadRequestError` if trying to parse invalid json

@@ -2,4 +2,5 @@
   "cowlib": {:package, "1.0.0"},
   "jazz": {:package, "0.2.0"},
   "plug": {:package, "0.5.3"},
+  "poison": {:package, "1.0.2"},
   "ranch": {:package, "1.0.0"}}
